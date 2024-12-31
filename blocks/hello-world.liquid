@@ -1,0 +1,15 @@
+<script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
+{{ 'app.css' | asset_url | stylesheet_tag: preload: true }}
+
+<div id="hello-world" data-customer-id="{{ customer.id }}"></div>
+
+{% schema %}
+{
+  "name": "Hello, Svelte!",
+  "presets": [
+    {
+      "name": "Hello, Svelte!"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,12 @@
+{
+  "extends": "@slavamak/tsconfig/base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "paths": {
+      "~/*": ["frontend/*"]
+    },
+  },
+  "exclude": ["assets"]
+}
+

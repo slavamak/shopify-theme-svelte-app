@@ -1,0 +1,69 @@
+{
+  "name": "shopify-theme-svelte-app",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "wireit",
+    "dev": "wireit",
+    "fmt": "prettier --check .",
+    "lint": "eslint",
+    "shopify:pull": "wireit",
+    "shopify:push": "wireit"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "wireit": {
+    "build": {
+      "command": "vite build",
+      "env": {
+        "NODE": "production"
+      }
+    },
+    "dev": {
+      "command": "vite build --mode dev --watch",
+      "service": true,
+      "env": {
+        "NODE": "development"
+      },
+      "dependencies": [
+        "dev:shopify"
+      ]
+    },
+    "shopify:push": {
+      "command": "shopify theme push",
+      "env": {
+        "SHOPIFY_FLAG_STORE": "slavamak-sandbox"
+      }
+    },
+    "shopify:pull": {
+      "command": "shopify theme pull",
+      "env": {
+        "SHOPIFY_FLAG_STORE": "slavamak-sandbox"
+      }
+    },
+    "dev:shopify": {
+      "command": "shopify theme dev",
+      "service": true,
+      "env": {
+        "SHOPIFY_FLAG_STORE": "slavamak-sandbox",
+        "SHOPIFY_FLAG_STORE_PASSWORD": "rahlah"
+      }
+    }
+  },
+  "dependencies": {
+    "svelte": "^5.16.0"
+  },
+  "devDependencies": {
+    "@shopify/prettier-plugin-liquid": "^1.6.3",
+    "@slavamak/eslint-config": "^1.1.0",
+    "@slavamak/tsconfig": "^1.2.1",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@sveltejs/vite-plugin-svelte-inspector": "^4.0.1",
+    "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "vite": "^6.0.6",
+    "wireit": "^0.14.9"
+  }
+}
