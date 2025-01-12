@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { globalState } from './state.svelte'
+  import { globalState } from '~/state.svelte'
 
   function greet() {
     globalState.customer.name = 'Svelte'
