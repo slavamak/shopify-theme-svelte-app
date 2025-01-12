@@ -1,8 +1,6 @@
 {
-  "extends": "@slavamak/tsconfig/base",
+  "extends": "@slavamak/tsconfig/svelte",
   "compilerOptions": {
-    "baseUrl": ".",
-    "moduleResolution": "bundler",
     "paths": {
       "~/*": ["frontend/*"]
     },

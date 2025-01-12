@@ -1,14 +1,20 @@
 <script lang="ts">
-  import { globalState } from './state.svelte.ts'
+  import { globalState } from './state.svelte'
 
   function greet() {
-    alert('Welcome to Svelte!')
-    globalState.customer.name = 'svelte'
+    globalState.customer.name = 'Svelte'
+  }
+
+  function increment() {
+    globalState.count += 1
   }
 </script>
 
-<button onclick={greet}>click me</button>
-<div>customer name is: {globalState.customer.name}</div>
+<button onclick={greet}>Set customer name</button>
+<button onclick={increment}>Increment count</button>
+
+<div>Customer name: {globalState.customer.name}</div>
+<div>Count: {globalState.count}</div>
 
 <style>
   button {

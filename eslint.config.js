@@ -4,7 +4,8 @@ import { configs } from '@slavamak/eslint-config'
 export default [
   { ignores: ['assets'] },
   configs.ignore,
-  configs.base,
-  configs.browser,
+  { ...configs.browser, files: [...(configs.browser.files || []), '**/*.svelte'] },
+  { ...configs.base, files: [...(configs.base.files || []), '**/*.svelte'] },
   configs.typescript,
+  configs.svelte,
 ]
