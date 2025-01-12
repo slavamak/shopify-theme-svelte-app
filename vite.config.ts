@@ -2,10 +2,10 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { defineConfig } from 'vite'
 
 export default defineConfig(({ mode }) => {
-  const isProduction = mode === 'production'
+  const isDev = mode === 'dev'
   return {
     build: {
-      sourcemap: isProduction === false && 'inline',
+      sourcemap: isDev && 'inline',
       outDir: './assets',
       manifest: false,
       emptyOutDir: false,
@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       svelte({
         compilerOptions: {
-          dev: isProduction === false,
+          dev: isDev,
         },
       }),
     ],
