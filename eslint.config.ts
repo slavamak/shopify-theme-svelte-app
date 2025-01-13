@@ -1,6 +1,6 @@
 import { configs, mergeConfigs } from '@slavamak/eslint-config'
+import type { Linter } from 'eslint'
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
   { ignores: ['assets'] },
   configs.ignore,
@@ -8,4 +8,4 @@ export default [
   mergeConfigs(configs.browser, { files: ['**/*.svelte'] }),
   configs.typescript,
   configs.svelte,
-]
+] satisfies Linter.Config[]
